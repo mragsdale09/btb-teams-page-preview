@@ -1,0 +1,376 @@
+@font-face {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/anton.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/lora-400.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./assets/lora-500.ttf") format("truetype");
+}
+
+:root {
+  --purple: #441b84;
+  --dark-purple: #170830;
+  --orange: #f3573c;
+  --cream: #f3f3eb;
+  --pink: #ffd4cc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--cream);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--dark-purple);
+  font-family: "Lora", Georgia, serif;
+  margin: 0;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.site-header {
+  align-items: center;
+  background: rgba(23, 8, 48, .94);
+  color: var(--cream);
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+  left: 0;
+  padding: 14px clamp(20px, 4vw, 64px);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.brand,
+.site-nav,
+.pill,
+h1,
+h2 {
+  font-family: "Anton", Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.brand {
+  font-size: 22px;
+  letter-spacing: .01em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-nav {
+  align-items: center;
+  display: flex;
+  font-size: 16px;
+  gap: clamp(14px, 2.2vw, 34px);
+}
+
+.site-nav a {
+  text-decoration: none;
+}
+
+.site-nav a:not(.pill):hover,
+.site-nav a:not(.pill):focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.pill {
+  background: var(--orange);
+  border: 2px solid rgba(255, 255, 255, .18);
+  border-radius: 999px;
+  color: white;
+  display: inline-block;
+  font-size: 17px;
+  letter-spacing: .025em;
+  min-width: 190px;
+  padding: 13px 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.pill:hover,
+.pill:focus-visible {
+  background: #e94b32;
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+.nav-cta {
+  font-size: 15px;
+  min-width: 136px;
+  padding: 9px 24px;
+}
+
+.hero {
+  background: var(--dark-purple);
+  min-height: 760px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero::after {
+  background: linear-gradient(to bottom, rgba(23, 8, 48, .2), rgba(23, 8, 48, .62));
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.hero > img {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.hero-content {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  inset: 0;
+  justify-content: center;
+  margin: auto;
+  max-width: 960px;
+  padding: 110px 28px 48px;
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: clamp(90px, 11vw, 170px);
+  letter-spacing: -.025em;
+  line-height: .9;
+  margin: 0;
+  text-shadow: 0 3px 22px rgba(23, 8, 48, .62);
+}
+
+.hero p {
+  font-size: clamp(20px, 2.1vw, 32px);
+  line-height: 1.32;
+  margin: 0;
+  max-width: 760px;
+  text-shadow: 0 2px 16px rgba(23, 8, 48, .68);
+}
+
+.introduction {
+  margin: 0 auto;
+  max-width: 1180px;
+  min-width: 0;
+  padding: 86px clamp(28px, 7vw, 100px);
+  text-align: center;
+}
+
+.introduction h2 {
+  color: var(--purple);
+  font-size: clamp(44px, 6vw, 82px);
+  line-height: .95;
+  margin: 0 0 28px;
+  overflow-wrap: anywhere;
+}
+
+.introduction p {
+  font-size: clamp(18px, 1.7vw, 25px);
+  line-height: 1.55;
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+.team-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 620px;
+}
+
+.team-image {
+  min-height: 620px;
+  overflow: hidden;
+}
+
+.team-image img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.team-copy {
+  align-items: flex-start;
+  background: var(--purple);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: clamp(44px, 6.5vw, 110px);
+}
+
+.team-copy h2 {
+  font-size: clamp(56px, 7vw, 108px);
+  letter-spacing: -.02em;
+  line-height: .9;
+  margin: 0 0 32px;
+}
+
+.team-copy p {
+  font-size: clamp(16px, 1.3vw, 21px);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 720px;
+}
+
+.closing-cta {
+  align-items: center;
+  background: var(--purple);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  justify-content: center;
+  min-height: 520px;
+  padding: 80px 28px;
+  text-align: center;
+}
+
+.closing-cta h2 {
+  font-size: clamp(58px, 7.5vw, 116px);
+  line-height: .95;
+  margin: 0;
+  max-width: 1300px;
+}
+
+.site-footer {
+  align-items: center;
+  background: var(--dark-purple);
+  color: var(--cream);
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  padding: 28px clamp(24px, 5vw, 72px);
+}
+
+@media (max-width: 980px) {
+  .site-header {
+    justify-content: center;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .hero {
+    min-height: 650px;
+  }
+
+  .team-section {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .team-section .team-image {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 56vw;
+  }
+
+  .team-section .team-copy {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 64px clamp(28px, 8vw, 76px) 74px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header {
+    padding-block: 12px;
+  }
+
+  .brand {
+    font-size: 20px;
+  }
+
+  .hero {
+    min-height: 570px;
+  }
+
+  .hero > img {
+    object-position: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(76px, 26vw, 112px);
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .introduction {
+    padding-inline: 20px;
+    padding-block: 62px;
+  }
+
+  .introduction h2 {
+    font-size: 36px;
+  }
+
+  .team-section .team-image {
+    min-height: 68vw;
+  }
+
+  .team-copy h2 {
+    font-size: 58px;
+  }
+
+  .team-copy p {
+    font-size: 16px;
+  }
+
+  .closing-cta {
+    min-height: 420px;
+  }
+
+  .closing-cta h2 {
+    font-size: 58px;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
